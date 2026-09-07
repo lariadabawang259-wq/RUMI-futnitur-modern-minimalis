@@ -1,0 +1,696 @@
+/* --- CSS RESET & VARIABLES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  /* Palet Warna Elegan Modern */
+  --bg-color: #FAFAFA;          /* Putih Bersih / Off-White */
+  --card-bg: #FFFFFF;          /* Putih Murni */
+  --text-main: #121212;        /* Hitam Modern Solid */
+  --text-muted: #666666;       /* Abu-abu Soft */
+  
+  /* Nuansa Kayu & Beech */
+  --beech-wood: #EBE3D5;       /* Kayu Beech Muda / Krem Warm */
+  --wood-accent: #A67C52;      /* Cokelat Kayu Medium */
+  --wood-dark: #6F4E37;        /* Cokelat Tua Premium */
+  --black-accent: #1A1A1A;     /* Hitam Aksen Tombol/Elemen */
+  
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.08);
+  --transition-fast: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* --- NAVBAR --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 8%;
+  background-color: rgba(250, 250, 250, 0.85);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  transition: var(--transition-fast);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--wood-accent);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--text-main);
+  transition: var(--transition-fast);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--text-main);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 85vh;
+  padding: 0 8%;
+  gap: 4rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  background-color: var(--beech-wood);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-text h1 {
+  font-size: 3.4rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.hero-text p {
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  max-width: 480px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  background-color: var(--black-accent);
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--black-accent);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn:hover {
+  background-color: var(--wood-dark);
+  border-color: var(--wood-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--text-main);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--text-main);
+  color: #FFFFFF;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-fast);
+}
+
+.hero-image img:hover {
+  transform: scale(1.02);
+}
+
+/* --- TARGET PASAR / SOLUSI RUANG SECTION --- */
+.target-section {
+  padding: 6rem 8%;
+  background-color: #F4F0EA; /* Sentuhan Cokelat Beech Soft */
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.target-card {
+  background: var(--card-bg);
+  padding: 3rem 2rem;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-fast);
+}
+
+.target-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-bottom: 3px solid var(--wood-accent);
+}
+
+.target-icon {
+  margin-bottom: 1.2rem;
+  color: var(--wood-accent); /* Menggunakan warna cokelat kayu sebagai aksen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.target-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.target-card:hover .target-icon svg {
+  transform: scale(1.1); /* Efek membesar halus saat card di-hover */
+}
+
+.target-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.target-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- PRODUK SECTION --- */
+.products {
+  padding: 6rem 8%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-fast);
+  border: 1px solid #F0F0F0;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-info {
+  padding: 1.8rem;
+  background-color: var(--card-bg);
+}
+
+.card-info h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.card-info .price {
+  color: var(--wood-dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.card-info .btn-secondary {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: transparent;
+  border: 1px solid var(--text-main);
+  color: var(--text-main);
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
+}
+
+.card-info .btn-secondary:hover {
+  background-color: var(--black-accent);
+  color: #FFFFFF;
+  border-color: var(--black-accent);
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 2.5rem;
+  background-color: var(--black-accent);
+  color: #A0A0A0;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 3rem;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .hero-text p {
+    margin: 0 auto 2rem auto;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+/* --- FITUR FILTER KATALOG --- */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.4rem;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: var(--text-main);
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--black-accent);
+  color: #FFFFFF;
+  border-color: var(--black-accent);
+}
+
+/* Animasi menghilang & muncul halus untuk filter */
+.card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card.hide {
+  display: none;
+}
+
+.card-info .description {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+/* --- KONSULTASI SECTION --- */
+.consultation-section {
+  padding: 6rem 8%;
+  background-color: var(--beech-wood);
+}
+
+.consultation-container {
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 3rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--wood-accent);
+  background-color: #FFFFFF;
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--black-accent);
+  color: #FFFFFF;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+  background-color: var(--wood-dark);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gallery-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-img-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.gallery-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.gallery-card-body {
+  padding: 16px;
+}
+
+.gallery-card-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.gallery-card-body p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.custom-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.custom-text {
+  flex: 1;
+}
+
+.custom-image {
+  flex: 1;
+  max-width: 500px; /* Batasi lebar maksimal pembungkus gambar */
+  width: 100%;
+}
+
+.custom-image img {
+  width: 100%;
+  height: 320px; /* Tentukan tinggi konsisten */
+  object-fit: cover; /* Agar gambar terpotong rapi tanpa distorsi/gepeng */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Pilihan Warna Produk */
+.color-selection {
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+.color-selection select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+}
+
+/* Floating Cart Button */
+.floating-cart-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8b5a2b;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 99;
+}
+#badge-count {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 0.8rem;
+}
+
+/* Modal Styling */
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.cart-content {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 8px;
+  padding: 20px;
+}
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.close-btn { cursor: pointer; font-size: 1.5rem; }
+.cart-items { max-height: 250px; overflow-y: auto; margin: 15px 0; }
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 8px;
+}
+.btn-remove { background: #ff4d4d; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; }
+.cart-footer { border-top: 1px solid #eee; padding-top: 10px; }
+.cart-total { display: flex; justify-content: space-between; font-size: 1.1rem; margin-bottom: 15px; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 40px; /* Sesuaikan tinggi logo dengan kebutuhan */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Styling Kontainer Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Jarak antara gambar dan teks RUMI */
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Mengatur ukuran gambar logo agar kecil & presisi */
+.logo-img {
+  height: 28px; /* Tinggi logo kecil seragam */
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-map {
+  flex: 1;
+  min-width: 250px;
+}
+
+.map-responsive {
+  overflow: hidden;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* Styling Maps Mini di Footer */
+.footer-map {
+  max-width: 220px; /* Membatasi lebar agar tetap ringkas */
+}
+
+.map-card {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Efek bayangan halus */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  line-height: 0; /* Mengeliminasi gap bawah pada iframe */
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  height: 120px; /* Tinggi peta dibuat minim agar tidak memakan banyak tempat */
+}
