@@ -795,3 +795,85 @@ footer {
     margin: 0 auto;
   }
 }
+
+/* --- TAMPILAN KHUSUS SMARTPHONE / HP (<= 768px) --- */
+@media screen and (max-width: 768px) {
+  /* 2 Produk Per Baris di Layar HP */
+  .products .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important; /* Memaksa 2 kolom */
+    gap: 12px; /* Jarak antar kartu lebih rapat agar pas di HP */
+    padding: 0 10px;
+  }
+
+  /* Penyesuaian Ukuran Kartu Produk di HP */
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .card img {
+    height: 140px; /* Menyesuaikan tinggi gambar agar rasio seimbang */
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .card-info {
+    padding: 8px 0 0 0;
+  }
+
+  .card-info h3 {
+    font-size: 0.9rem; /* Ukuran judul lebih proporsional di HP */
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  /* Sembunyikan deskripsi panjang di HP agar kartu tetap ringkas */
+  .card-info .description {
+    display: none; 
+  }
+
+  .color-selection {
+    margin: 6px 0;
+  }
+
+  .color-selection label {
+    font-size: 0.75rem;
+  }
+
+  .color-selection select {
+    font-size: 0.75rem;
+    padding: 4px;
+  }
+
+  .card-info .price {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin: 6px 0;
+  }
+
+  .card-info .btn-secondary {
+    font-size: 0.75rem;
+    padding: 8px 5px;
+    width: 100%;
+  }
+
+  /* Tombol Filter Katalog dapat di-scroll menyamping di HP */
+  .filter-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    flex-shrink: 0;
+  }
+}
