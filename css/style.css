@@ -694,3 +694,104 @@ footer {
   width: 100%;
   height: 120px; /* Tinggi peta dibuat minim agar tidak memakan banyak tempat */
 }
+
+/* --- TENTANG KAMI SECTION (Posisi Gambar di Tengah) --- */
+.about-section {
+  padding: 60px 20px;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /* Menyeimbangkan elemen secara vertikal */
+  justify-content: center; /* Posisi di tengah */
+  gap: 40px;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Gambar berada di tengah kontainer */
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px; /* Batas lebar gambar */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+}
+
+/* --- MEDIA QUERIES (Responsif untuk PC & HP) --- */
+
+/* Tampilan Tablet / Layar Sedang (<= 992px) */
+@media screen and (max-width: 992px) {
+  .hero,
+  .about-container,
+  .custom-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Tampilan Smartphone / Layar Kecil (<= 768px) */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .about-image img {
+    max-width: 100%; /* Gambar menyesuaikan layar HP */
+  }
+
+  .grid,
+  .target-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Menjadi 1 kolom di HP */
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr; /* Footer stack vertikal */
+    text-align: center;
+  }
+
+  .footer-map,
+  .footer-brand,
+  .footer-links,
+  .footer-contact {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .map-card {
+    margin: 0 auto;
+  }
+}
